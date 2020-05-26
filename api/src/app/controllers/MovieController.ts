@@ -1,7 +1,8 @@
 import movies from '../assets/filmes.json';
+import { Request, Response } from 'express';
 
 class MovieController {
-  async sortMovie(req, res) {
+  async sortMovie(req: Request, res: Response) {
     const { word } = req.params;
     const id = Math.floor(Math.random() * 264 + 1);
     const { filme } = movies[id];

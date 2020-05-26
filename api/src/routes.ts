@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import MovieController from './app/controllers/MovieController';
 
-const routes = new Router();
+const routes = Router();
 
 routes.get('/filmes/:word', MovieController.sortMovie);
 
