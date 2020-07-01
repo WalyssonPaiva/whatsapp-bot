@@ -12,10 +12,10 @@ const apiQuery = async (content) =>{
 }
 
 const interval = setInterval( async ()=>{
-    const messageArea = document.querySelector('._9tCEa');
+    const messageArea = document.querySelector('.z_tTQ');
     if(messageArea){
         const messageCard = messageArea.lastElementChild;
-        const message = messageCard.querySelector('._3zb-j > span > span');
+        const message = messageCard.querySelector('.eRacY > span > span');
         
         //entra neste if se tiver uma nova mensagem (mensagem nova != mensagem antiga)
         if(initialMessage != message.textContent){
@@ -25,7 +25,8 @@ const interval = setInterval( async ()=>{
                 messageBox = document.querySelectorAll("[contenteditable='true']")[1];
                 const response = await apiQuery(content);
                 messageBox.innerHTML = `${response}`.replace(/  /gm,'');
-
+                console.log(content);
+                console.log(response);
 		        //Force refresh
 		        event = document.createEvent("UIEvents");
 		        event.initUIEvent("input", true, true, window, 1);
